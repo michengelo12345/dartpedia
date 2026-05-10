@@ -280,12 +280,11 @@ void printUsage() { // Add this new function
 
 \																/
 ---------------------------------------------------------------------------------------------------------------------------------
-*/
 
 
 
 
-// Codigo valido ate o momento !!
+
 
 // Codigo:
 
@@ -313,8 +312,43 @@ void printUsage() { // <-- Adicionado esta funcao na versao '0.0.3' e '0.0.4'
 	print(
 	"The following commands are valid: 'help', 'version', 'search <ARTICLE-TITLE>'");
 }
-
+*/
 
 //																|
 // ------------------------------------------------------------------------------------------------------------------------------
+
+//Mudanças da tarefa 02 - importar pacotes http
+
+import 'dart:io'; // <-- importamento do dart.io - adicionado nesta versão (0.0.7)
+import 'package:http/http.dart' as http; // <--- importando pacotes http adicionado nesta versão (0.0.7)
+
+const version = '0.0.7';
+
+void main(List<String> arguments) {
+  if (arguments.isEmpty || arguments.first == 'help') {
+    printUsage();
+  } else if (arguments.first == 'version') {
+    print('Dartpedia CLI version $version');
+  } else if (arguments.first == 'search') {
+    final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
+    searchWikipedia(inputArgs);
+  } else {
+    printUsage();
+  }
+}
+
+void searchWikipedia(List<String>? arguments) {
+  print('searchWikipedia received arguments: $arguments');
+}
+
+void printUsage() {
+  print(
+    "The following commands are valid: "
+    "'help', 'version', 'search <ARTICLE-TITLE>'",
+  );
+}
+
+// */
+// ----------------------------------------------------------------------------------------------------------------------------- |
+
 
