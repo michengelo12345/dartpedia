@@ -470,7 +470,7 @@ void printUsage() {
   );
 }
 
-*/
+
 // -----------------------------------------------------------------------------------------------------------------------------
 
 // Tarefa 05: renomear comando search para wikipedia
@@ -542,7 +542,17 @@ void printUsage() {
   );
 }
 
-// */
+*/
 // -----------------------------------------------------------------------------------------------------------------------------
 
+// versão 0.1.1
 
+import 'dart:io';
+import 'package:http/http.dart' as http;
+import 'package:command_runner/command_runner.dart';
+
+void main(List<String> arguments) async {
+  var runner = CommandRunner();
+
+  await runner.run(arguments);
+}
